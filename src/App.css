@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  border: none;
+  outline: none;
+}
+
+body {
+  background: var(--background);
+  background-image: url(./images/bg-desktop-light.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  padding-top: 75px;
+
+  font-family: "Josefin Sans", sans-serif;
+  /* transition: background 0.08s ease-in-out; */
+
+  --background: hsl(0, 0%, 98%);
+}
+
+body.dark {
+  background-image: url(./images/bg-desktop-dark.jpg);
+  --background: hsl(235, 21%, 11%);
+}
+
+button {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+main {
+  width: 540px;
+}
+
+/* Header */
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-changer {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.theme-img {
+  background: url(./images/icon-moon.svg) no-repeat;
+  height: 26px;
+  width: 26px;
+}
+
+body.dark .theme-img {
+  background: url(./images/icon-sun.svg);
+}
+
+.header-logo {
+  font-size: 40px;
+  letter-spacing: 16px;
+  color: white;
+}
+
+/* Input */
+
+.main-input {
+  background: white;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  height: 62px;
+  margin: 50px 0 25px;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.05);
+}
+
+.form-circle {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: 1.6px solid hsl(233, 11%, 84%);
+  margin: auto 0 auto 20px;
+}
+
+.todo-input {
+  font-family: "Josefin Sans", sans-serif;
+  border: none;
+  height: 100%;
+  width: 495px;
+  background: none;
+  font-size: 18px;
+  padding-left: 20px;
+}
+
+.todo-input:focus {
+  border: none;
+  outline: none;
+}
+
+.todo-input:active {
+  border: none;
+  outline: none;
+}
+
+/* output */
+
+.drag-drop {
+  color: hsl(233, 11%, 84%);
+  position: absolute;
+  margin-top: 50px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.main-output {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.05);
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.list {
+  position: relative;
+  height: 62px;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.delete-list {
+  display: flex;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  visibility: hidden;
+}
+
+.list:hover .delete-list {
+  visibility: visible;
+}
+
+.todo-button {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  margin-right: 20px;
+  background: hsl(233, 11%, 84%);
+  border: none;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-button::after {
+  content: "";
+  height: 23px;
+  border-radius: 50%;
+  width: 23px;
+  position: absolute;
+  background: white;
+}
+
+.todo-button:hover {
+  background: linear-gradient(
+    to bottom right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+}
+
+.todo-button.completed::after {
+  display: none;
+}
+
+.todo-button.completed {
+  background: linear-gradient(
+    to bottom right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+}
+
+.todo-activity {
+  font-size: 18px;
+  font-weight: normal;
+  height: 17px;
+  color: hsl(235, 19%, 35%);
+}
+
+.list .todo-button.completed + .todo-activity {
+  color: hsl(233, 11%, 84%);
+  text-decoration: line-through hsl(236, 9%, 61%);
+}
+
+.todo-control {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 20px;
+}
+
+.p-items-left {
+  font-size: 14px;
+  color: hsl(236, 9%, 61%);
+}
+
+.c-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: hsl(236, 9%, 61%);
+}
+
+.c-btn:hover {
+  color: hsl(235, 19%, 35%);
+}
+
+.c-btn.active:hover {
+  color: hsl(220, 98%, 61%);
+}
+
+.btn-clear {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: hsl(236, 9%, 61%);
+}
+
+.btn-clear:hover {
+  color: hsl(235, 19%, 35%);
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  height: 16px;
+}
+
+.p-items-left {
+  width: 107.083px;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.none {
+  display: none;
+}
+
+.active {
+  color: hsl(220, 98%, 61%);
+}
+
+.error {
+  box-shadow: inset 0 0 0px 1.5px rgba(255, 0, 0, 0.5);
+  color: red;
+}
+
+.main-input.error .todo-input::placeholder {
+  color: red;
+}
