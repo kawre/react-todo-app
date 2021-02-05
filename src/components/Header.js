@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Header = () => {
+  const [mode, setMode] = useState("light");
   const themeHandler = () => {
     document.body.classList.toggle("dark");
+    setMode(!mode);
+    console.log(mode);
   };
+  useEffect(() => {}, []);
 
   return (
     <div className="main-header">

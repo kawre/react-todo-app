@@ -17,8 +17,6 @@ const ControlButtons = ({ todos, value, setValue }) => {
       class: "btn-completed",
     },
   ];
-  console.log(value);
-
   return (
     <>
       {buttons.map((btn, index) => {
