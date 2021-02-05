@@ -1,13 +1,26 @@
 import React, { useEffect, useState } from "react";
 
+const LOCAL_STORAGE_KEY = "todoApp.mode";
+
 const Header = () => {
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState("");
   const themeHandler = () => {
-    document.body.classList.toggle("dark");
-    setMode(!mode);
-    console.log(mode);
+    if (document.body.classList.contains("light")) {
+      setMode("dark");
+    } else {
+      setMode("light");
+    }
   };
-  useEffect(() => {}, []);
+
+  useEffect(() => {
+    const storedMode = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (storedMode) setMode(storedMode);
+  }, []);
+
+  useEffect(() => {
+    document.body.className = mode;
+    localStorage.setItem(LOCAL_STORAGE_KEY, mode);
+  }, [mode]);
 
   return (
     <div className="main-header">
