@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import uuid from "react-uuid";
 
-const ControlButtons = ({ todos, value, setValue }) => {
-  const [filteredTodos, setFilteredTodos] = useState([]);
+const ControlButtons = ({ setCategory, value, setValue }) => {
   const buttons = [
     {
       title: "All",
@@ -17,6 +16,7 @@ const ControlButtons = ({ todos, value, setValue }) => {
       class: "btn-completed",
     },
   ];
+
   return (
     <>
       {buttons.map((btn, index) => {
@@ -24,7 +24,10 @@ const ControlButtons = ({ todos, value, setValue }) => {
           <button
             key={uuid()}
             className={`${btn.class} c-btn ${index === value && "active"}`}
-            onClick={() => setValue(index)}
+            onClick={() => {
+              setValue(index);
+              setCategory(btn.title);
+            }}
           >
             {btn.title}
           </button>

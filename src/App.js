@@ -9,7 +9,7 @@ const LOCAL_STORAGE_KEY = "todoApp.todos";
 function App() {
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
-  const [status, setStatus] = useState("all");
+  const [, setStatus] = useState("all");
   const [value, setValue] = useState(0);
 
   useEffect(() => {

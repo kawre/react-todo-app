@@ -12,6 +12,8 @@ const Header = () => {
     }
   };
 
+  // Local Storage
+
   useEffect(() => {
     const storedMode = localStorage.getItem(LOCAL_STORAGE_KEY);
     if (storedMode) setMode(storedMode);
@@ -29,6 +31,7 @@ const Header = () => {
         <img
           className="theme-img"
           src="https://i.ibb.co/vwJhYp1/26x26-00000000.png"
+          alt="theme-btn"
         />
       </button>
     </div>
