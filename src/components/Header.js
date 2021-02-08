@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const LOCAL_STORAGE_KEY = "todoApp.mode";
 
 const Header = () => {
-  const [mode, setMode] = useState("");
+  const [mode, setMode] = useState("light");
   const themeHandler = () => {
     if (document.body.classList.contains("light")) {
       setMode("dark");

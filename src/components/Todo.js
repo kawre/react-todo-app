@@ -1,6 +1,6 @@
 import React from "react";
 
-const Todo = ({ text, todo, todos, setTodos }) => {
+const Todo = ({ text, todo, todos, setTodos, provided }) => {
   const deleteHandler = () => {
     setTodos(todos.filter((el) => el.id !== todo.id));
   };
@@ -18,7 +18,7 @@ const Todo = ({ text, todo, todos, setTodos }) => {
     );
   };
   return (
-    <div className="list">
+    <li className="list">
       <button
         onClick={completeHandler}
         className={`todo-button ${todo.completed ? "completed" : ""}`}
@@ -29,7 +29,7 @@ const Todo = ({ text, todo, todos, setTodos }) => {
       <button onClick={deleteHandler} className="delete-list">
         <img src="https://svgur.com/i/TfU.svg" alt="" />
       </button>
-    </div>
+    </li>
   );
 };
 
